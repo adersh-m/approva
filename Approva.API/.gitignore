@@ -1,0 +1,13 @@
+appsettings.Development.json
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+*.db
+*.bak
+*.dll
+*.exe
+*.pdb
+.DS_Store

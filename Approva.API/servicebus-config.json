@@ -1,0 +1,49 @@
+{
+  "UserConfig": {
+    "Namespaces": [
+      {
+        "Name": "exp-management-ns",
+        "Queues": [
+          {
+            "Name": "expense-submitted-queue",
+            "Properties": {
+              "DeadLetteringOnMessageExpiration": true,
+              "MaxDeliveryCount": 5
+            }
+          },
+          {
+            "Name": "reimbursement-queue",
+            "Properties": {
+              "DeadLetteringOnMessageExpiration": true,
+              "MaxDeliveryCount": 5
+            }
+          }
+        ],
+        "Topics": [
+          {
+            "Name": "expense-approved-topic",
+            "Subscriptions": [
+              { "Name": "notification-sub" },
+              { "Name": "audit-sub" },
+              { "Name": "analytics-sub" }
+            ]
+          },
+          {
+            "Name": "expense-rejected-topic",
+            "Subscriptions": [
+              { "Name": "notification-sub" },
+              { "Name": "audit-sub" }
+            ]
+          },
+          {
+            "Name": "policy-violation-topic",
+            "Subscriptions": [
+              { "Name": "manager-sub" },
+              { "Name": "compliance-sub" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
