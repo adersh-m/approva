@@ -1,8 +1,8 @@
-using ExpenseApp.API.Domain.Entities;
-using ExpenseApp.API.Domain.Enums;
+using Approva.API.Domain.Entities;
+using Approva.API.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExpenseApp.API.Extensions;
+namespace Approva.API.Extensions;
 
 public static class SeedDataExtension
 {

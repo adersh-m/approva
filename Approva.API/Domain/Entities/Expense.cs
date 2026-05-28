@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using ExpenseApp.API.Domain.Enums;
+using Approva.API.Domain.Enums;
 
-namespace ExpenseApp.API.Domain.Entities;
+namespace Approva.API.Domain.Entities;
 
 public class Expense
 {

@@ -1,4 +1,4 @@
-namespace ExpenseApp.API.Application.DTOs.Reference;
+namespace Approva.API.Application.DTOs.Reference;
 
 public class DepartmentDto
 {

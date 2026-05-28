@@ -1,7 +1,7 @@
-using ExpenseApp.API.Application.DTOs.Reference;
-using ExpenseApp.API.Application.Interfaces;
+using Approva.API.Application.DTOs.Reference;
+using Approva.API.Application.Interfaces;
 
-namespace ExpenseApp.API.Application.Services;
+namespace Approva.API.Application.Services;
 
 public class ReferenceDataService : IReferenceDataService
 {

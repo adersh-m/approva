@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ExpenseApp.API.Migrations
+namespace Approva.API.Migrations
 {
     /// <inheritdoc />
     public partial class FixEnumStorageAndDeleteBehavior : Migration

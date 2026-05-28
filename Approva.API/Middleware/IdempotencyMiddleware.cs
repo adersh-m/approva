@@ -1,6 +1,6 @@
-using ExpenseApp.API.Application.Interfaces;
+using Approva.API.Application.Interfaces;
 
-namespace ExpenseApp.API.Middleware;
+namespace Approva.API.Middleware;
 
 public class IdempotencyMiddleware
 {

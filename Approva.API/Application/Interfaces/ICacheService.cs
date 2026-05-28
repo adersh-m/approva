@@ -1,4 +1,4 @@
-namespace ExpenseApp.API.Application.Interfaces;
+namespace Approva.API.Application.Interfaces;
 
 public interface ICacheService
 {

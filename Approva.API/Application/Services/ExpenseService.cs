@@ -1,13 +1,13 @@
 using System.Text.Json;
 using Azure.Messaging.ServiceBus;
-using ExpenseApp.API.Application.DTOs.Expenses;
-using ExpenseApp.API.Application.Interfaces;
-using ExpenseApp.API.Domain.Entities;
-using ExpenseApp.API.Domain.Enums;
-using ExpenseApp.API.Infrastructure.Persistence;
+using Approva.API.Application.DTOs.Expenses;
+using Approva.API.Application.Interfaces;
+using Approva.API.Domain.Entities;
+using Approva.API.Domain.Enums;
+using Approva.API.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExpenseApp.API.Application.Services;
+namespace Approva.API.Application.Services;
 
 public class ExpenseService : IExpenseService
 {

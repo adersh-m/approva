@@ -1,7 +1,7 @@
-using ExpenseApp.API.Application.Interfaces;
+using Approva.API.Application.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace ExpenseApp.API.Infrastructure.Cache;
+namespace Approva.API.Infrastructure.Cache;
 
 public class IdempotencyService : IIdempotencyService
 {

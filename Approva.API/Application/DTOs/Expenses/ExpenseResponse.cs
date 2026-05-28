@@ -1,6 +1,6 @@
-using ExpenseApp.API.Domain.Enums;
+using Approva.API.Domain.Enums;
 
-namespace ExpenseApp.API.Application.DTOs.Expenses;
+namespace Approva.API.Application.DTOs.Expenses;
 
 public class ExpenseResponse
 {

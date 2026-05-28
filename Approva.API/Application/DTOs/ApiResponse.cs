@@ -1,4 +1,4 @@
-namespace ExpenseApp.API.Application.DTOs;
+namespace Approva.API.Application.DTOs;
 
 public class ApiResponse<T>
 {

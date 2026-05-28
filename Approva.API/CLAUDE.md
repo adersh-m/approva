@@ -314,19 +314,19 @@ Three roles. No others.
 ### Folder Structure
 
 ```
-/ExpenseApp
+/Approva
   /src
-    /ExpenseApp.API          — Controllers, middleware, startup
-    /ExpenseApp.Application  — Services, business logic, interfaces
-    /ExpenseApp.Domain       — Entities, enums, domain events
-    /ExpenseApp.Infrastructure
+    /Approva.API          — Controllers, middleware, startup
+    /Approva.Application  — Services, business logic, interfaces
+    /Approva.Domain       — Entities, enums, domain events
+    /Approva.Infrastructure
       /Persistence           — EF DbContext, migrations, EF repositories
       /ReadRepositories      — Dapper read repositories (DTOs live here too)
       /Cache                 — Redis cache service
       /Messaging             — Service Bus publishers and consumers
   /tests
-    /ExpenseApp.UnitTests
-    /ExpenseApp.IntegrationTests
+    /Approva.UnitTests
+    /Approva.IntegrationTests
 /client                      — React frontend
 ```
 

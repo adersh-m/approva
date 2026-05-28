@@ -1,6 +1,6 @@
-using ExpenseApp.API.Application.DTOs.Expenses;
+using Approva.API.Application.DTOs.Expenses;
 
-namespace ExpenseApp.API.Application.Interfaces;
+namespace Approva.API.Application.Interfaces;
 
 public interface IExpenseReadRepository
 {

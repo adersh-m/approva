@@ -1,8 +1,8 @@
-using ExpenseApp.API.Domain.Entities;
-using ExpenseApp.API.Extensions;
+using Approva.API.Domain.Entities;
+using Approva.API.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExpenseApp.API.Infrastructure.Persistence;
+namespace Approva.API.Infrastructure.Persistence;
 
 public class AppDbContext : DbContext
 {

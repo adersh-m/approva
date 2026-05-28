@@ -1,9 +1,9 @@
 using System.Data;
 using Dapper;
-using ExpenseApp.API.Application.DTOs.Reference;
-using ExpenseApp.API.Application.Interfaces;
+using Approva.API.Application.DTOs.Reference;
+using Approva.API.Application.Interfaces;
 
-namespace ExpenseApp.API.Infrastructure.ReadRepositories;
+namespace Approva.API.Infrastructure.ReadRepositories;
 
 public class ReferenceDataRepository : IReferenceDataRepository
 {

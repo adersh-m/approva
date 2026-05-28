@@ -1,4 +1,4 @@
-namespace ExpenseApp.API.Domain.Enums;
+namespace Approva.API.Domain.Enums;
 
 public enum ExpenseStatus
 {

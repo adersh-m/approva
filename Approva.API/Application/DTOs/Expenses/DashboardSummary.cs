@@ -1,4 +1,4 @@
-namespace ExpenseApp.API.Application.DTOs.Expenses;
+namespace Approva.API.Application.DTOs.Expenses;
 
 public class DashboardSummary
 {

@@ -1,4 +1,4 @@
-namespace ExpenseApp.API.Domain.Entities;
+namespace Approva.API.Domain.Entities;
 
 public class AuditLog
 {

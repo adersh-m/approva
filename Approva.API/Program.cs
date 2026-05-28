@@ -1,12 +1,12 @@
 using System.Data;
 using System.Text.Json.Serialization;
 using Azure.Messaging.ServiceBus;
-using ExpenseApp.API.Application.Interfaces;
-using ExpenseApp.API.Application.Services;
-using ExpenseApp.API.Infrastructure.Cache;
-using ExpenseApp.API.Infrastructure.Persistence;
-using ExpenseApp.API.Infrastructure.ReadRepositories;
-using ExpenseApp.API.Middleware;
+using Approva.API.Application.Interfaces;
+using Approva.API.Application.Services;
+using Approva.API.Infrastructure.Cache;
+using Approva.API.Infrastructure.Persistence;
+using Approva.API.Infrastructure.ReadRepositories;
+using Approva.API.Middleware;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,9 +1,9 @@
-using ExpenseApp.API.Application.DTOs;
-using ExpenseApp.API.Application.DTOs.Reference;
-using ExpenseApp.API.Application.Interfaces;
+using Approva.API.Application.DTOs;
+using Approva.API.Application.DTOs.Reference;
+using Approva.API.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ExpenseApp.API.Controllers;
+namespace Approva.API.Controllers;
 
 [ApiController]
 [Route("api/reference")]
