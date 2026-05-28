@@ -12,7 +12,7 @@ Most portfolio projects demonstrate that you can write code. This one demonstrat
 
 Every architectural decision in Approva has a reason. EF Core for writes, Dapper for reads. Cache-aside on reference data, never on transactional data. Idempotency keys on every mutating endpoint. State machine guards on status transitions. Topics for broadcast events, queues for point-to-point tasks. These aren't arbitrary choices — they're documented, reasoned tradeoffs that reflect how production systems actually behave.
 
-See [wiki/06-decisions.md](wiki/06-decisions.md) for the full Architecture Decision Records.
+See [Wiki/06-decisions.md](Wiki/06-decisions.md) for the full Architecture Decision Records.
 
 ---
 
@@ -97,7 +97,7 @@ State transitions are enforced at the database level using state machine guards 
 
 ## Quick start
 
-See [wiki/07-development-guide.md](wiki/07-development-guide.md) for the full setup guide.
+See [Wiki/07-development-guide.md](Wiki/07-development-guide.md) for the full setup guide.
 
 **Prerequisites:**
 - .NET 10 SDK
@@ -145,7 +145,7 @@ API runs at `https://localhost:7xxx`. OpenAPI docs at `/openapi/v1.json`.
   /Controllers     — API surface
   /Middleware      — Idempotency middleware
   /Extensions      — Seed data, service registration
-/wiki              — Architecture documentation
+/Wiki              — Architecture documentation
 ```
 
 ---
@@ -154,15 +154,15 @@ API runs at `https://localhost:7xxx`. OpenAPI docs at `/openapi/v1.json`.
 
 | Document | Description |
 |---|---|
-| [00-overview.md](wiki/00-overview.md) | What Approva is and why it was built |
-| [01-architecture.md](wiki/01-architecture.md) | System design and request lifecycle |
-| [02-data-model.md](wiki/02-data-model.md) | Entities, relationships, design decisions |
-| [03-infrastructure.md](wiki/03-infrastructure.md) | Azure SQL, Redis, Service Bus setup |
-| [04-api-reference.md](wiki/04-api-reference.md) | All endpoints documented |
-| [05-concepts.md](wiki/05-concepts.md) | Systems concepts implemented in context |
-| [06-decisions.md](wiki/06-decisions.md) | Architecture Decision Records |
-| [07-development-guide.md](wiki/07-development-guide.md) | Local setup end to end |
-| [08-roadmap.md](wiki/08-roadmap.md) | Planned Tier 2 and Tier 3 features |
+| [00-overview.md](Wiki/00-overview.md) | What Approva is and why it was built |
+| [01-architecture.md](Wiki/01-architecture.md) | System design and request lifecycle |
+| [02-data-model.md](Wiki/02-data-model.md) | Entities, relationships, design decisions |
+| [03-infrastructure.md](Wiki/03-infrastructure.md) | Azure SQL, Redis, Service Bus setup |
+| [04-api-reference.md](Wiki/04-api-reference.md) | All endpoints documented |
+| [05-concepts.md](Wiki/05-concepts.md) | Systems concepts implemented in context |
+| [06-decisions.md](Wiki/06-decisions.md) | Architecture Decision Records |
+| [07-development-guide.md](Wiki/07-development-guide.md) | Local setup end to end |
+| [08-roadmap.md](Wiki/08-roadmap.md) | Planned Tier 2 and Tier 3 features |
 
 ---
 
