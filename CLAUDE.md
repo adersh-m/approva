@@ -338,7 +338,17 @@ Single project structure. Separation of concerns enforced by folders, not separa
   /Controllers             — API controllers
   /Middleware              — Idempotency, auth, error handling
   /Extensions              — IServiceCollection extensions, seed data
-/client                    — React frontend (added in later tier)
+/client                    — React frontend
+  /src
+    /api               — fetch wrappers for all API calls
+    /components        — reusable UI components
+    /context           — AuthContext (user state, login, logout)
+    /pages             — LoginPage, ExpenseListPage,
+                         SubmitExpensePage, DashboardPage
+    /styles            — global CSS, variables, reset
+  index.html
+  vite.config.js
+  package.json
 ```
 
 Never put business logic in controllers.
@@ -392,3 +402,52 @@ To keep scope honest:
 - Real Azure SQL and Azure Service Bus are used — but no deployment pipeline in Tier 1
 
 These are deliberate v1 deferrals. Do not add them speculatively.
+
+---
+
+### Frontend Conventions
+
+**Stack:** Vite + React, plain CSS, no UI framework.
+
+**API calls:**
+- All fetch calls live in `/src/api/` — never inline in components
+- Always send `Idempotency-Key: crypto.randomUUID()` on POST requests
+- Always send `X-Employee-Id` and `X-Employee-Role` from AuthContext
+- API base URL proxied via Vite — never hardcode localhost ports in components
+
+**Auth:**
+- AuthContext stores `{ id, name, email, role }` — persisted to sessionStorage
+- Login matches email against seed users — no password in v1
+- All pages except LoginPage redirect to login if no auth context
+
+**Seed users for login:**
+- employee@test.com → Employee role
+- manager@test.com → Manager role  
+- admin@test.com → FinanceAdmin role
+
+**Idempotency:**
+- Generate UUID with `crypto.randomUUID()` before every POST
+- Generate once per form submission — not on every render
+- Never reuse the same key across different submissions
+
+**State management:**
+- AuthContext for user identity (global)
+- Local useState for page-level data
+- No Redux, no Zustand, no external state library
+
+**CSS conventions:**
+- CSS variables in `/styles/variables.css` for colors, spacing, typography
+- One CSS file per component, imported in the component file
+- No inline styles except truly dynamic values (e.g. progress bar width)
+- Mobile-first — base styles for mobile, media queries for desktop
+
+**Error handling:**
+- Every API call has a try/catch
+- 409 responses show a specific message: "Already actioned — please refresh"
+- 400 responses show validation message from API response
+- Network errors show a generic "Something went wrong" message
+
+**Never:**
+- Never put API calls directly in JSX
+- Never store credentials or tokens in localStorage (sessionStorage only)
+- Never use a UI component library — plain CSS only

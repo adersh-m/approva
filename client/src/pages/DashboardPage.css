@@ -1,0 +1,57 @@
+.dashboard-page {
+  padding-top: var(--space-lg);
+}
+
+.period-selector {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.period-btn {
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.period-btn.active,
+.period-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: #eff6ff;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.summary-card-label {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.summary-card-count {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.summary-card-amount {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}

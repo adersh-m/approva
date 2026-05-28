@@ -1,0 +1,15 @@
+.submit-page {
+  max-width: 600px;
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-lg);
+}
+
+.submit-success {
+  background-color: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: var(--radius-sm);
+  color: var(--color-success);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-md);
+}
