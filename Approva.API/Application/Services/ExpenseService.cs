@@ -13,11 +13,13 @@ public class ExpenseService : IExpenseService
 {
     private readonly AppDbContext _db;
     private readonly ServiceBusClient _serviceBusClient;
+    private readonly IExpenseReadRepository _readRepo;
 
-    public ExpenseService(AppDbContext db, ServiceBusClient serviceBusClient)
+    public ExpenseService(AppDbContext db, ServiceBusClient serviceBusClient, IExpenseReadRepository readRepo)
     {
         _db = db;
         _serviceBusClient = serviceBusClient;
+        _readRepo = readRepo;
     }
 
     public async Task<ExpenseResponse> CreateExpenseAsync(CreateExpenseRequest request, Guid employeeId)
@@ -34,6 +36,7 @@ public class ExpenseService : IExpenseService
             EmployeeId = employeeId,
             CategoryId = request.CategoryId,
             DepartmentId = request.DepartmentId,
+            SubmittedAt = now,
             CreatedAt = now,
             UpdatedAt = now
         };
@@ -114,6 +117,37 @@ public class ExpenseService : IExpenseService
 
         return MapToResponse(expense);
     }
+
+    public Task<ExpenseListResponse> GetEmployeeExpensesAsync(Guid employeeId, int page, int pageSize) =>
+        _readRepo.GetEmployeeExpensesAsync(employeeId, page, pageSize);
+
+    public async Task<ExpenseListResponse> GetDepartmentExpensesAsync(Guid managerId, int page, int pageSize, string? status)
+    {
+        var manager = await _db.Users.AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Id == managerId);
+
+        if (manager?.DepartmentId is null)
+            throw new KeyNotFoundException($"Manager {managerId} not found or has no department");
+
+        return await _readRepo.GetDepartmentExpensesAsync(manager.DepartmentId.Value, page, pageSize, status);
+    }
+
+    public Task<ExpenseListResponse> GetAllExpensesAsync(int page, int pageSize, string? status, Guid? departmentId) =>
+        _readRepo.GetAllExpensesAsync(page, pageSize, status, departmentId);
+
+    public async Task<DashboardSummary> GetDashboardAsync(Guid managerId, DateTime periodStart, DateTime periodEnd)
+    {
+        var manager = await _db.Users.AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Id == managerId);
+
+        if (manager?.DepartmentId is null)
+            throw new KeyNotFoundException($"Manager {managerId} not found or has no department");
+
+        return await _readRepo.GetDashboardSummaryAsync(manager.DepartmentId.Value, periodStart, periodEnd);
+    }
+
+    public Task<DashboardSummary> GetAdminDashboardAsync(DateTime periodStart, DateTime periodEnd) =>
+        _readRepo.GetAdminDashboardSummaryAsync(periodStart, periodEnd);
 
     private static ExpenseResponse MapToResponse(Expense expense) => new()
     {
