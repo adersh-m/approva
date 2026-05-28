@@ -109,7 +109,7 @@ See [Wiki/07-development-guide.md](Wiki/07-development-guide.md) for the full se
 
 ```bash
 # 1. Clone
-git clone https://github.com/yourusername/approva.git
+git clone https://github.com/your-actual-github-username/approva.git
 cd approva
 
 # 2. Start Redis
