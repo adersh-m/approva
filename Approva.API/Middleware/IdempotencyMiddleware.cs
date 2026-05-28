@@ -48,7 +48,7 @@ public class IdempotencyMiddleware
             buffer.Seek(0, SeekOrigin.Begin);
             var responseBody = await new StreamReader(buffer).ReadToEndAsync();
 
-            if (context.Response.StatusCode == StatusCodes.Status201Created)
+            if (context.Response.StatusCode is >= 200 and < 300)
                 await idempotencyService.StoreResultAsync(redisKey, responseBody, TimeSpan.FromHours(24));
 
             buffer.Seek(0, SeekOrigin.Begin);

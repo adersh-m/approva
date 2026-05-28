@@ -15,4 +15,9 @@ public class ExpenseResponse
     public Guid DepartmentId { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
+    public DateTime? ApprovedAt { get; set; }
+    public Guid? ApprovedById { get; set; }
+    public DateTime? RejectedAt { get; set; }
+    public Guid? RejectedById { get; set; }
+    public string? RejectionReason { get; set; }
 }
